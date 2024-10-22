@@ -36,7 +36,10 @@ extern "C"
 #ifdef CPROCESSING_EXPORTS
 	#define DLL_EXPORT __declspec(dllexport)
 #else
-	#define DLL_EXPORT __declspec(dllimport)
+	// TODO: set this to a different value without changing this file
+	// Original line:
+	// #define DLL_EXPORT __declspec(dllimport)
+	#define DLL_EXPORT __attribute__((visibility("default")))
 #endif
 #define CP_API DLL_EXPORT
 

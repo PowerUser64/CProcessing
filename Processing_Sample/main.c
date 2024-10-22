@@ -121,7 +121,7 @@ void image_test(void)
 		CP_Image_Draw(img, 0, 0, (float)CP_System_GetWindowWidth(), (float)CP_System_GetWindowHeight(), 255);
 		// restore the tint color
 		CP_Settings_NoTint();
-        
+
 		CP_Graphics_DrawRect(CP_Input_GetMouseX(), CP_Input_GetMouseY(), 50, 50);
     }
 	CP_Settings_ImageMode(CP_POSITION_CENTER);
@@ -197,7 +197,7 @@ void noise_example(void)
 	{
 		for (int x = 0; x < CP_System_GetWindowWidth(); x += CP_System_GetWindowWidth() / Rectangles)
 		{
-      // get a value between 0 and 255 for our color 
+      // get a value between 0 and 255 for our color
       // (the smaller the x and the y, the smoother the noise will be)
       int grayscale_val = (int)(CP_Random_Noise((float)x*0.01f, (float)y*0.01f, CP_System_GetFrameCount() * 0.1f) * 255);
 
@@ -228,7 +228,7 @@ void mouse_tracking_circle_rect(void)
 	//        (float)abs((int)(CP_Input_GetMouseX() - x3)) / (float)abs((int)(CP_Input_GetMouseY() - y3))
 	//        )
 	//);
-	//CP_Graphics_DrawRect(x3/* + size / 2*/, y3/* + size / 2*/, -size/* / 2*/, size/* / 2*/); 
+	//CP_Graphics_DrawRect(x3/* + size / 2*/, y3/* + size / 2*/, -size/* / 2*/, size/* / 2*/);
   CP_Settings_NoStroke();
 	CP_Graphics_DrawEllipse(x3, y3, CP_Input_GetMouseX() - x3, CP_Input_GetMouseY() - y3);
 
@@ -358,11 +358,11 @@ void text_demo(void)
 	// 	fullscreen();
 	// else if (CP_Input_MouseTriggered(MOUSE_BUTTON_RIGHT))
 	// 	size(500, 500);
-	// 
+	//
 	int button_pressed = FALSE;
 	// CP_Graphics_SetEllipseMode(CP_POSITION_CORNER);
 	// CP_Graphics_DrawCircle(CP_Input_GetMouseX(), CP_Input_GetMouseY(), 50);
-	// 
+	//
 	 //translate(CP_Input_GetMouseX(), CP_Input_GetMouseY());
   CP_Settings_Translate(50.0f + 50.0f*(float)sin(CP_System_GetFrameCount() / 300.0), 0);
 	//translate(canvasWidth / 2.0f, canvasHeight / 2.0f - 400.0f);
@@ -1460,20 +1460,20 @@ void line_func(void)
 
 	// set the fill color to red
 	// fill(255, 0, 0, 255);
-	// 
+	//
 	// // draw a triangle with three points
 	// CP_Graphics_DrawTriangle(100.0f, 100.0f,  // point 1
 	//          200.0f, 100.0f,  // point 2
 	//          200.0f, 200.0f); // point 3
-	// 
+	//
 	// // set the fill color to dark blue
 	// fill(0, 0, 160, 255);
-	// 
+	//
 	// // draw a triangle with three points
 	// CP_Graphics_DrawTriangle(0.0f, 0.0f,        // point 1
 	//          CP_Input_GetMouseX(), CP_Input_GetMouseY(),    // point 2
 	//          CP_Input_GetMousePreviousX(), CP_Input_GetMousePreviousY()); // point 3
-	// 
+	//
 	// fill(255, 0, 0, 255);
 	// CP_Graphics_DrawCircle(CP_Input_GetMouseX(), CP_Input_GetMouseY(), 50.0f);
 	// fill(0, 255, 0, 255);
@@ -1674,7 +1674,7 @@ void dt_example(void)
 {
 	CP_Color Red = CP_Color_Create(255, 0, 0, 255);
 	CP_Color Blue = CP_Color_Create(0, 0, 255, 255);
-	
+
 	if (Up)
 	{
 		Count += CP_System_GetDt();
@@ -1741,7 +1741,7 @@ void save_restore_test_update(void)
 
 	// Restore the red settings and draw a red square in the bottom left
   CP_Settings_Restore();
-	
+
 	CP_Graphics_DrawRect(CP_System_GetWindowWidth() * 0.25f, CP_System_GetWindowHeight() * 0.80f, 100.0f, 100.0f);
 }
 
@@ -2131,7 +2131,7 @@ void updateHSVTests(void)
 	CP_Color rgb = CP_Color_Create((int)((sinf(CP_System_GetFrameCount() * 0.05f) + 1.0f) * 128.0f) % 256,
 					   (int)((sinf(CP_System_GetFrameCount() * 0.05f + 2.0f * (float)M_PI / 3.0f) + 1.0f) * 128.0f) % 256,
 					   (int)((sinf(CP_System_GetFrameCount() * 0.05f + 4.0f * (float)M_PI / 3.0f) + 1.0f) * 128.0f) % 256, 255);
-	
+
 	//printf("rgb: %d, %d, %d\n", rgb.r, rgb.g, rgb.b);
 
   CP_Settings_Fill(CP_Color_FromColorHSL(CP_ColorHSL_FromColor(rgb)));
@@ -2170,7 +2170,7 @@ void ForcedUpdate(void)
   CP_Graphics_DrawRect(x_pos, (float)CP_System_GetWindowHeight() / 2.0f, 100, 100);
   x_pos += 2;
 
-  // If space pressed, reset the state 
+  // If space pressed, reset the state
   if (CP_Input_KeyTriggered(KEY_SPACE))
     CP_Engine_SetNextGameStateForced(ForcedInit, ForcedUpdate, NULL);
   else if (CP_Input_KeyTriggered(KEY_Q))
@@ -2248,7 +2248,7 @@ void updatebuff(void)
 
   // Read in the frame buffer
   frameBuffer = CP_Image_Screenshot(0, 0, CP_System_GetWindowWidth(), CP_System_GetWindowHeight());
-  
+
   // Choose a random tint color
   // WARNING: Causes flashing colors
   CP_Color rTint = CP_Color_Create(100, 100, 100, 255);// CP_Color_Create(CP_Random_RangeInt(0, 255), CP_Random_RangeInt(0, 255), CP_Random_RangeInt(0, 255), CP_System_GetFrameCount() % 255);
@@ -2278,7 +2278,7 @@ void updatefr(void)
 {
   CP_Graphics_ClearBackground(CP_Color_Create(255, 255, 255, 255));
 
-  // Create a string with the frame rate 
+  // Create a string with the frame rate
   char buffer[128] = { 0 };
   sprintf_s(buffer, 128, "%d frames have elapsed", CP_System_GetFrameCount());
 
@@ -2496,9 +2496,9 @@ void JUSTIN_DEMO_UPDATE_GetFrameCount(void)
     CP_Settings_TextAlignment(CP_TEXT_ALIGN_H_CENTER, CP_TEXT_ALIGN_V_MIDDLE);
     CP_Graphics_ClearBackground(CP_Color_Create(200, 200, 200, 255));
     CP_Settings_Fill(CP_Color_Create(100, 20, 100, 255));
-    
+
     unsigned currentFrameCount = CP_System_GetFrameCount();
-    
+
     char buffer[16] = { 0 };
     sprintf_s(buffer, _countof(buffer), "%u", currentFrameCount);
     CP_Font_DrawText(buffer, 200, 200);
@@ -2666,13 +2666,13 @@ void JUSTIN_DEMO_UPDATE_COLORHSV_FROMCOLOR(void)
     // Get the frameCount and create a starting color
     int frameCount = CP_System_GetFrameCount();
     CP_Color rgb = CP_Color_Create(255, 0, 0, 255);
-    
+
     // Convert the starting color to HSV
     CP_ColorHSL hsl = CP_ColorHSL_FromColor(rgb);
-    
+
     // Shift the hue of the starting color based on the frameCount
     hsl.h += frameCount * 3;
-    
+
     // Convert back to RBG and set the background color
     CP_Graphics_ClearBackground(CP_Color_FromColorHSL(hsl));
 }
@@ -2696,16 +2696,16 @@ void JUSTIN_DEMO_UPDATE_COLORHSV_LERP(void)
     // Create colors for the four corners of the screen
     CP_ColorHSL start = CP_ColorHSL_Create(0, 100, 50, 255);
     CP_ColorHSL end = CP_ColorHSL_Create(359, 100, 50, 255);
-    
+
     // Get the mouse position relative to the canvas
     float mx = (float)CP_Input_GetMouseWorldX() / (float)CP_System_GetWindowWidth();
-    
+
     // Clamp the values
     mx = CP_Math_ClampFloat(mx, 0.0f, 1.0f);
-    
+
     // Lerp the colors based on mouse position along the x-axis
     CP_ColorHSL lerp = CP_ColorHSL_Lerp(start, end, mx);
-    
+
     // Set the background based on the lerp
     CP_Graphics_ClearBackground(CP_Color_FromColorHSL(lerp));
 }
@@ -2717,22 +2717,22 @@ void JUSTIN_DEMO_UPDATE_COLOR_LERP(void)
     CP_Color Green = CP_Color_Create(0, 255, 0, 255);
     CP_Color Blue = CP_Color_Create(0, 0, 255, 255);
     CP_Color White = CP_Color_Create(255, 255, 255, 255);
-    
+
     // Get the mouse position relative to the canvas
     float mx = (float)CP_Input_GetMouseWorldX() / (float)CP_System_GetWindowWidth();
     float my = (float)CP_Input_GetMouseWorldY() / (float)CP_System_GetWindowHeight();
-    
+
     // Clamp the values
     mx = CP_Math_ClampFloat(mx, 0.0f, 1.0f);
     my = CP_Math_ClampFloat(my, 0.0f, 1.0f);
-    
+
     // Lerp the colors based on position along the x-axis
     CP_Color lerpx1 = CP_Color_Lerp(Red, Blue, mx);
     CP_Color lerpx2 = CP_Color_Lerp(Green, White, mx);
-    
+
     // Lerp the two previous colors based on y-axis position
     CP_Color lerp = CP_Color_Lerp(lerpx1, lerpx2, my);
-    
+
     // Set the background based on the lerp
     CP_Graphics_ClearBackground(lerp);
 }
@@ -2742,12 +2742,12 @@ void JUSTIN_DEMO_UPDATE_CP_COLORHSV(void)
     // Get the current framecount and set the background to black
     int frameCount = CP_System_GetFrameCount();
     CP_Graphics_ClearBackground(CP_Color_CreateHex(0x000000FF));
-    
+
     // Use framecount to slowly change the HSV color through all colors of the rainbow
     CP_ColorHSL hsl = CP_ColorHSL_Create(360 - (frameCount * 3), 100, 50, 255);
     CP_Settings_Fill(CP_Color_FromColorHSL(hsl));
     CP_Graphics_DrawRectAdvanced(10, 10, 380, 185, 0, 20);
-    
+
     // Do some similar color math on RBG (less convenient)
     CP_Color rgb = CP_Color_Create((int)((sinf(frameCount * 0.05f) + 1.0f) * 128.0f) % 256,
         (int)((sinf(frameCount * 0.05f + 2.0f * (float)M_PI / 3.0f) + 1.0f) * 128.0f) % 256,
@@ -2769,28 +2769,28 @@ void JUSTIN_DEMO_UPDATE_CP_COLOR(void)
 {
     // Use the CP_Color_Create function to create a variable
     CP_Color color1 = CP_Color_Create(255, 40, 100, 255);
-    
+
     // Set the background with color1 (berry red)
     CP_Graphics_ClearBackground(color1);
-    
+
     // Create a color and pass it directly as a function parameter
     CP_Settings_Fill(CP_Color_Create(0, 200, 255, 255));
-    
+
     // Draw a rectangle at the top left of the screen (blue)
     float rectWidth = CP_System_GetWindowWidth() * 0.5f;
     float rectHeight = CP_System_GetWindowHeight() * 0.5f;
     CP_Graphics_DrawRect(0, 0, rectWidth, rectHeight);
-    
+
     // Create a third CP_Color and set the values by accessing the array
     CP_Color color3;
     color3.rgba[0] = 150;	// Red
     color3.rgba[1] = 255;	// Green
     color3.rgba[2] = 40;	// Blue
     color3.rgba[3] = 255;	// Alpha (transparency)
-    
+
     // Set the fill color for the final shape
     CP_Settings_Fill(color3);
-    
+
     // Draw another smaller rectange (green)
     rectWidth = CP_System_GetWindowWidth() * 0.4f;
     rectHeight = CP_System_GetWindowHeight() * 0.4f;
@@ -3000,7 +3000,7 @@ int main(void)
 
 	//fullscreen();
 	//SetNextGameState(init0, update0, NULL);
-	
+
 	Run();
 	return 0;
 }

@@ -105,7 +105,7 @@ void CP_Input_KeyboardCallback(GLFWwindow* window, int key, int scancode, int ac
     UNREFERENCED_PARAMETER(mods);
     UNREFERENCED_PARAMETER(scancode);
     UNREFERENCED_PARAMETER(window);
-    
+
     switch (action)
     {
     case GLFW_PRESS:
@@ -268,7 +268,7 @@ void CP_Input_GamepadUpdate(void)
 		// copy to previous structures
 		memcpy(&gamepad_prev_states[i], &gamepad_curr_states[i], sizeof(XINPUT_STATE));
 		memcpy(&gamepad_prev_analog_states[i], &gamepad_curr_analog_states[i], sizeof(CP_GAMEPAD_ANALOG_STATE));
-		
+
 		// zero out new structures
 		memset(&gamepad_curr_states[i], 0, sizeof(XINPUT_STATE));
 		memset(&gamepad_curr_analog_states[i], 0, sizeof(CP_GAMEPAD_ANALOG_STATE));
@@ -306,7 +306,7 @@ void CP_Input_GamepadUpdate(void)
 			// left Y
 			currStick = gamepad_curr_states[i].Gamepad.sThumbRY;
 			normStick = fmaxf(-1.0f, (float)currStick / CP_GAMEPAD_THUMB_RANGE);
-			gamepad_curr_analog_states[i].right_stick.y = (fabsf(normStick) < _deadzone ? 0 : (fabsf(normStick) - _deadzone) * (normStick / fabsf(normStick))) / (1.0f - _deadzone);		
+			gamepad_curr_analog_states[i].right_stick.y = (fabsf(normStick) < _deadzone ? 0 : (fabsf(normStick) - _deadzone) * (normStick / fabsf(normStick))) / (1.0f - _deadzone);
 		}
 	}
 }

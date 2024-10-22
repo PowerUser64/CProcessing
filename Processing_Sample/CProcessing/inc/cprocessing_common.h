@@ -2,7 +2,7 @@
 // CProcessing
 //
 // Copyright(c) 2021 DigiPen Institute of Technology
-// 
+//
 // https://github.com/DigiPen-Faculty/CProcessing
 //---------------------------------------------------------
 
@@ -14,7 +14,7 @@ extern "C"
 #endif
 
 //---------------------------------------------------------
-// Cleanup Warnings 
+// Cleanup Warnings
 
 #ifdef _MSC_VER
 #pragma warning(disable: 4201)  // nonstandard extension used : nameless struct/union

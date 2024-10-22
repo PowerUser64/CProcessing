@@ -81,7 +81,7 @@ void CP_FrameRate_FrameEnd()
 	double currSeconds = 0;
 
     do
-    { 
+    {
         CP_UpdateFrameTime();
 
 		// compute remaining microseconds in the frame

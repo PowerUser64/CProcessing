@@ -1,0 +1,18 @@
+# msbuild build artifacts
+/CProcessing/x64/
+/CProcessing/lib/
+/Processi.*/
+/x64/
+
+# cmake build artifacts
+/build/
+
+# visual studio per-user stuff
+*.vcxproj.user
+
+# editor nonsense
+/.idea/
+/.vs/
+
+# language server
+/.cache/
